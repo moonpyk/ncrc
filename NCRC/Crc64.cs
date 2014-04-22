@@ -21,6 +21,13 @@ namespace NCRC
             Initialize();
         }
 
+        public Crc64(UInt64 polynomial, UInt64 seed)
+        {
+            _table = InitializeTable(polynomial);
+            _seed = seed;
+            Initialize();
+        }
+
         public override int HashSize
         {
             get
@@ -65,17 +72,19 @@ namespace NCRC
 
         public override sealed void Initialize()
         {
-            throw new NotImplementedException();
+            _hash = _seed;
         }
 
-        protected override void HashCore(byte[] array, int ibStart, int cbSize)
+        protected override void HashCore(byte[] buffer, int start, int length)
         {
-            throw new NotImplementedException();
+            _hash = CalculateHash(_table, _hash, buffer, start, length);
         }
 
         protected override byte[] HashFinal()
         {
-            throw new NotImplementedException();
+            var hashBuffer = UInt64ToBigEndianBytes(~_hash);
+            HashValue = hashBuffer;
+            return hashBuffer;
         }
 
         public static UInt64 CalculateHash(UInt64[] table, UInt64 seed, IList<byte> buffer, int start, int size)
