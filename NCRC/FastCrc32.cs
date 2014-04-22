@@ -1,8 +1,11 @@
 using System.Security.Cryptography;
 
-namespace Moonpyk.Crc {
-    class FastCrc32 : HashAlgorithm {
-        public static readonly uint[] Crc32Table = new uint[] {
+namespace NCRC
+{
+    class FastCrc32 : HashAlgorithm
+    {
+        public static readonly uint[] Crc32Table =
+        {
             0x00000000, 0x77073096, 0xee0e612c, 0x990951ba, 0x76dc4190, 0x706af48f, 
             0xe963a535, 0x9e6495a3, 0xedb88320, 0x79dcb8a4, 0xe0d5e91e, 0x97d2d988, 
             0x9b64c2b0, 0x7eb17cbd, 0xe7b82d07, 0x90bf1d91, 0x1db71064, 0x6ab020f2, 
@@ -50,25 +53,31 @@ namespace Moonpyk.Crc {
 
         private uint _hash;
 
-        public FastCrc32() {
+        public FastCrc32()
+        {
             Initialize();
         }
 
-        public override int HashSize {
-            get {
+        public override int HashSize
+        {
+            get
+            {
                 return 32;
             }
         }
 
-        public override sealed void Initialize() {
+        public override sealed void Initialize()
+        {
             _hash = Crc32.DefaultSeed;
         }
 
-        protected override void HashCore(byte[] buffer, int start, int length) {
+        protected override void HashCore(byte[] buffer, int start, int length)
+        {
             _hash = Crc32.CalculateHash(Crc32Table, _hash, buffer, start, length);
         }
 
-        protected override byte[] HashFinal() {
+        protected override byte[] HashFinal()
+        {
             var hashBuffer = Crc32.UInt32ToBigEndianBytes(~_hash);
             HashValue = hashBuffer;
             return hashBuffer;
