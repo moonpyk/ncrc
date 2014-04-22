@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 
 namespace NCRC
 {
-    class FastCrc32 : HashAlgorithm
+    public class FastCrc32 : HashAlgorithm
     {
         public static readonly uint[] Crc32Table =
         {

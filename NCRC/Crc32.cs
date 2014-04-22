@@ -119,12 +119,14 @@ namespace NCRC
 
         public static byte[] UInt32ToBigEndianBytes(UInt32 x)
         {
-            return new[] {
-                (byte)((x >> 24) & 0xff),
-                (byte)((x >> 16) & 0xff),
-                (byte)((x >> 8) & 0xff),
-                (byte)(x & 0xff)
-            };
+            var result = BitConverter.GetBytes(x);
+
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(result);
+            }
+
+            return result;
         }
     }
 }

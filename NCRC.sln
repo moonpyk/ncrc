@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCRC", "NCRC\NCRC.csproj", "{25ED9417-295E-490D-8062-A55667AEA9B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NCRC.Tests", "NCRC.Tests\NCRC.Tests.csproj", "{958BE6B0-3D8C-4464-8919-41AB06D05E50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,16 @@ Global
 		{25ED9417-295E-490D-8062-A55667AEA9B1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{25ED9417-295E-490D-8062-A55667AEA9B1}.Release|x86.ActiveCfg = Release|x86
 		{25ED9417-295E-490D-8062-A55667AEA9B1}.Release|x86.Build.0 = Release|x86
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{958BE6B0-3D8C-4464-8919-41AB06D05E50}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
